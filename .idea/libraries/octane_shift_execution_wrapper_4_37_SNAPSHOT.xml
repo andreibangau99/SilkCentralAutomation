@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="octane-shift-execution-wrapper-4.37-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/test-execution/octane-shift-execution-wrapper-4.37-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
