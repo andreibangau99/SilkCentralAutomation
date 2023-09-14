@@ -7,7 +7,7 @@ pipeline{
     }
     parameters {
         string(name: 'testsToRun',description: '' )
-        string(name: 'runnerJarPath', defaultValue: '', description: "")
+        string(name: 'runnerJarPath', defaultValue: 'D:\regDaySeptember\ALM_Octane_Shift-2.389-SNAPSHOT\resources\Silk Central automation\test-execution\octane-shift-execution-wrapper-4.37-SNAPSHOT.jar', description: "")
         string(name: 'suiteId',description: '' )
         string(name: 'suiteRunId',description: '' )
     }
@@ -48,7 +48,7 @@ pipeline{
                         }
                     }
                 }
-                archiveArtifacts artifacts: 'test-execution/java_command_to_execute.bat,test-execution/command_to_execute.bat,test-execution/testResults/**', onlyIfSuccessful: false
+                archiveArtifacts artifacts: test-execution/command_to_execute.bat,test-execution/testResults/**', onlyIfSuccessful: false
                 junit allowEmptyResults: true, testResults: 'test-execution/testResults/*/*.xml'
 
             }
