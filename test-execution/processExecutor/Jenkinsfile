@@ -21,7 +21,7 @@ pipeline{
                 script {
                     rep = "AAAA QAQAAA"
                     dir('test-execution') {
-                        bat 'echo %rep%.replaceAll("A","a")'
+                        bat 'echo ${%rep%.replaceAll("A","a")}'
                         bat 'npm install'
                         bat 'npm run build'
                         bat 'echo getting execution keywords from the test suite'
