@@ -25,6 +25,7 @@ pipeline{
                     bat 'echo getting execution keywords from the test suite'
                     bat 'npm run start-init-execution-keywords %suiteId%"'
                     script {
+                        bat 'echo %rep%'
                         rep = rep.replaceAll('a','A')
                         bat 'echo %rep%'
                           agentLabel = readFile('execution_keywords.txt').trim()
