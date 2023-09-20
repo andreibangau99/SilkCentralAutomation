@@ -44,7 +44,7 @@ pipeline{
                     dir('test-execution') {
                         bat 'npm install'
                         bat 'npm run build'
-                        bat 'call npm run start-process-executor "%testsToRun%" "${runnerJarPath.replaceAll(\'D\',\'c\')}" %suiteId% %suiteRunId%'
+                        bat """call npm run start-process-executor "%testsToRun%" "${runnerJarPath.replaceAll('D','c')}" %suiteId% %suiteRunId%"""
                         try {
                             bat 'call command_to_execute.bat'
                         } catch(err) {
