@@ -18,14 +18,16 @@ pipeline{
         stage('setTag') {
 
             steps {
-                dir('test-execution') {
-                    bat 'echo %rep%.replaceAll("A","a")'
-                    bat 'npm install'
-                    bat 'npm run build'
-                    bat 'echo getting execution keywords from the test suite'
-                    bat 'npm run start-init-execution-keywords %suiteId%"'
-                    script {
-                          agentLabel = readFile('execution_keywords.txt').trim()
+                script {
+                    dir('test-execution') {
+                        bat 'echo %rep%.replaceAll("A","a")'
+                        bat 'npm install'
+                        bat 'npm run build'
+                        bat 'echo getting execution keywords from the test suite'
+                        bat 'npm run start-init-execution-keywords %suiteId%"'
+                        
+                        agentLabel = readFile('execution_keywords.txt').trim()
+                        
                     }
                 }
 
