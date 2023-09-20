@@ -18,6 +18,7 @@ pipeline{
 
             steps {
                 dir('test-execution') {
+                    bat 'echo rrrr'
                     bat 'echo "${%testsToRun%.replaceAll("r","R")}"'
                     bat 'npm install'
                     bat 'npm run build'
