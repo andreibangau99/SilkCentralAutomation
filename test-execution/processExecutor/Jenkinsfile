@@ -19,6 +19,7 @@ pipeline{
 
             steps {
                 script {
+                    rep = "AAAA QAQAAA"
                     dir('test-execution') {
                         bat 'echo %rep%.replaceAll("A","a")'
                         bat 'npm install'
