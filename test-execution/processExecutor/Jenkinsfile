@@ -1,4 +1,5 @@
 def agentLabel = ""
+def rep = "aafaaa aaafaaf aaaafa"
 pipeline{
     agent any
     options {
@@ -19,12 +20,13 @@ pipeline{
             steps {
                 dir('test-execution') {
                     bat 'echo rrrr'
-                    bat 'echo ${"%testsToRun%.replaceAll("r","R")"}'
                     bat 'npm install'
                     bat 'npm run build'
                     bat 'echo getting execution keywords from the test suite'
                     bat 'npm run start-init-execution-keywords %suiteId%"'
                     script {
+                        rep = rep.replaceAll('a','A')
+                        bat 'echo %rep%'
                           agentLabel = readFile('execution_keywords.txt').trim()
                     }
                 }
